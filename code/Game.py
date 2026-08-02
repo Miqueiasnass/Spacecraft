@@ -1,23 +1,16 @@
+#from idlelib import window
+
 import pygame
 from code.Menu import Menu
-
+from code.const import WINDOW_SIZE
 
 
 class Game:
     def __init__(self):
         pygame.init()
-        self.window = pygame.display.set_mode(size=(800, 600))
-
+        self.window = pygame.display.set_mode(size=WINDOW_SIZE)
 
     def run(self):
         while True:
             menu = Menu(self.window)
             menu.run()
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-
-
-
-
-
